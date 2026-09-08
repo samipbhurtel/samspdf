@@ -17,8 +17,12 @@
   --color-primary-light: #eff6ff;
   --color-danger: #ef4444;
   --color-danger-hover: #dc2626;
+  --color-danger-light: #fef2f2;
   --color-drop-active: #dbeafe;
   --color-drop-border: #2563eb;
+  --color-warning: #f59e0b;
+  --color-warning-light: #fffbeb;
+  --color-warning-border: #fbbf24;
   --radius: 12px;
   --radius-sm: 8px;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
@@ -154,6 +158,88 @@ body {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+/* Messages */
+.messages {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  animation: messageIn 200ms ease;
+}
+
+@keyframes messageIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message--error {
+  background: var(--color-danger-light);
+  border: 1px solid var(--color-danger);
+  color: #991b1b;
+}
+
+.message--warning {
+  background: var(--color-warning-light);
+  border: 1px solid var(--color-warning-border);
+  color: #92400e;
+}
+
+.message__icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+}
+
+.message__text {
+  flex: 1;
+}
+
+.message__body {
+  flex: 1;
+}
+
+.message__summary {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.message__list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+}
+
+.message__list-item {
+  padding: 2px 0;
+  font-size: 0.8125rem;
+}
+
+.message__list-item::before {
+  content: "•";
+  margin-right: 6px;
+}
+
+.message__filename {
+  font-weight: 500;
 }
 
 /* File Queue */
