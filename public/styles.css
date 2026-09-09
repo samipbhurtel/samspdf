@@ -202,6 +202,12 @@ body {
   color: #92400e;
 }
 
+.message--success {
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  color: #065f46;
+}
+
 .message__icon {
   flex-shrink: 0;
   width: 18px;
@@ -421,4 +427,130 @@ body {
   .file-item {
     padding: 10px 12px;
   }
+}
+
+/* Progress Section */
+.progress {
+  margin-top: 32px;
+}
+
+.progress__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.progress__title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.progress__summary {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+.progress__files {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Progress File Item */
+.progress-file {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition);
+}
+
+.progress-file--completed {
+  border-color: #10b981;
+}
+
+.progress-file--converting {
+  border-color: var(--color-primary);
+}
+
+.progress-file--failed {
+  border-color: var(--color-danger);
+}
+
+.progress-file__name {
+  flex: 1;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.progress-file__status {
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.progress-file--completed .progress-file__status {
+  color: #10b981;
+}
+
+.progress-file--converting .progress-file__status {
+  color: var(--color-primary);
+}
+
+.progress-file--failed .progress-file__status {
+  color: var(--color-danger);
+}
+
+/* Download Section */
+.download {
+  margin-top: 20px;
+  padding: 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.download__message {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #10b981;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition), opacity var(--transition);
+}
+
+.download-btn:hover:not(:disabled) {
+  background: #059669;
+}
+
+.download-btn:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+
+.download-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

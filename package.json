@@ -9,6 +9,9 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "express": "^5.2.1"
+    "adm-zip": "^0.6.0",
+    "archiver": "^8.0.0",
+    "express": "^5.2.1",
+    "multer": "^2.3.0"
   }
 }

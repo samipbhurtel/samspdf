@@ -56,6 +56,18 @@
           <button class="convert-btn" type="button" id="convertBtn" disabled aria-disabled="true">Convert to PDF</button>
         </div>
       </section>
+
+      <section class="progress" id="progressSection" aria-label="Conversion progress" hidden>
+        <div class="progress__header">
+          <h2 class="progress__title">Conversion Progress</h2>
+        </div>
+        <p class="progress__summary" id="progressSummary"></p>
+        <ul class="progress__files" id="progressFiles" role="list"></ul>
+        <div class="download" id="downloadSection" hidden>
+          <p class="download__message" id="downloadMessage"></p>
+          <button class="download-btn" type="button" id="downloadBtn">Download ZIP</button>
+        </div>
+      </section>
     </main>
   </div>
 
