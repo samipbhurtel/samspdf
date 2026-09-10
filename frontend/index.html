@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word to PDF Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="header__title">Word → PDF</h1>
+      <p class="header__subtitle">Convert Word documents to PDF quickly and easily.</p>
+    </header>
+
+    <main class="main">
+      <div
+        class="dropzone"
+        id="dropzone"
+        role="button"
+        tabindex="0"
+        aria-label="Upload Word files. Click or drop files here."
+      >
+        <div class="dropzone__icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="12" y1="18" x2="12" y2="12"/>
+            <polyline points="9 15 12 12 15 15"/>
+          </svg>
+        </div>
+        <p class="dropzone__text">Drop your Word files here</p>
+        <p class="dropzone__or">or</p>
+        <button class="dropzone__btn" type="button" id="chooseFilesBtn">Choose Files</button>
+        <p class="dropzone__formats">Supports DOC and DOCX</p>
+        <input
+          type="file"
+          id="fileInput"
+          class="dropzone__input"
+          accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          multiple
+          aria-hidden="true"
+          tabindex="-1"
+        >
+      </div>
+
+      <div class="messages" id="messages" role="status" aria-live="polite"></div>
+
+      <section class="queue" id="queueSection" aria-label="Selected files" hidden>
+        <div class="queue__header">
+          <h2 class="queue__title">Selected Files</h2>
+          <button class="queue__clear" type="button" id="clearAllBtn">Clear All</button>
+        </div>
+        <ul class="queue__list" id="fileList" role="list" aria-live="polite"></ul>
+        <div class="queue__actions">
+          <button class="convert-btn" type="button" id="convertBtn" disabled aria-disabled="true">Convert to PDF</button>
+        </div>
+      </section>
+
+      <section class="progress" id="progressSection" aria-label="Conversion progress" hidden>
+        <div class="progress__header">
+          <h2 class="progress__title">Conversion Progress</h2>
+        </div>
+        <p class="progress__summary" id="progressSummary"></p>
+        <ul class="progress__files" id="progressFiles" role="list"></ul>
+        <div class="download" id="downloadSection" hidden>
+          <p class="download__message" id="downloadMessage"></p>
+          <button class="download-btn" type="button" id="downloadBtn">Download ZIP</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -6,3 +6,6 @@ node_modules/
 Thumbs.db
 uploads/
 temp
+npm-debug.log*
+backend/temp/*
+!backend/temp/.gitkeep
