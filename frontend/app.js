@@ -4,7 +4,7 @@
   // ── Configuration ──
 
   var CONFIG = {
-    API_URL: "https://YOUR-RENDER-SERVICE.onrender.com",
+    API_URL: "https://samspdf-api.onrender.com",
     MAX_FILE_SIZE: 50 * 1024 * 1024,
     MAX_FILES: 20,
     SUPPORTED_EXTENSIONS: [".doc", ".docx"],
